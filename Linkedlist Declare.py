@@ -59,6 +59,20 @@ class SinglylinkedList:
         else:
             print("The list is empty")
 
+    def delete_at_end(self):
+        if self.head is None:
+            print("The list is empty")
+            return
+        if self.head.next is None:
+            self.head = None
+            return
+
+        last = self.head
+        while last.next and last.next.next:
+            last = last.next
+        last.next = None
+
+
 li = SinglylinkedList()
 li.insert_at_beginning(5)
 li.insert_at_beginning(6)
