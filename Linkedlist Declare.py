@@ -53,7 +53,11 @@ class SinglylinkedList:
         current.next = new_node
 
 
-
+    def delete_at_beginning(self):
+        if self.head:
+            self.head = self.head.next
+        else:
+            print("The list is empty")
 
 li = SinglylinkedList()
 li.insert_at_beginning(5)
