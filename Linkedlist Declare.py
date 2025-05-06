@@ -86,7 +86,24 @@ class SinglylinkedList:
             print(f"Node with data {data} not found")
             return
         current.next = current.next.next
+    def search(self,data):
+        current = self.head
+        while current:
+            if current.data == data:
+                print(f"Node with dtaa {data} found!")
+                return
+            current = current.next
+        print(f"Node with data {data} not found!")
 
+    def update(self,old_data,new_data):
+        current = self.head
+        while current:
+            if current.data == old_data:
+                current.data = new_data
+                print(f"Node with data {old_data} updated!")
+                return
+            current = current.next
+        print(f"Node with data {old_data} not found!")
 
 li = SinglylinkedList()
 li.insert_at_beginning(5)
