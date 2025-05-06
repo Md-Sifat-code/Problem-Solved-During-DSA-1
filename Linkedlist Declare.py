@@ -1,3 +1,6 @@
+from logging import currentframe
+
+
 class Node:
     def __init__(self,data):
         self.data = data
@@ -32,6 +35,23 @@ class SinglylinkedList:
             last = last.next
 
         last.next = new_node
+
+    def insert_at_position(self,data,position):
+        new_node = Node(data)
+        if position == 0:
+            self.insert_at_beginning(data)
+            return
+        current = self.head
+        count = 0
+        while current and count < position-1:
+            current = current.next
+            count +=1
+        if current in None:
+            print("Position out of range")
+            return
+        new_node.next = current.next
+        current.next = new_node
+
 
 
 
