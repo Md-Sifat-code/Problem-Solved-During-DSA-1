@@ -72,6 +72,21 @@ class SinglylinkedList:
             last = last.next
         last.next = None
 
+    def delete_by_value(self,data):
+        if not self.head:
+            print("List is empty!")
+            return
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+        current = self.head
+        while current.next and current.next.data != data:
+            current = current.next
+        if current.next is None:
+            print(f"Node with data {data} not found")
+            return
+        current.next = current.next.next
+
 
 li = SinglylinkedList()
 li.insert_at_beginning(5)
