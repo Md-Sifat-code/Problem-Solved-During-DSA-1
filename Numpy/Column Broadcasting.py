@@ -8,3 +8,9 @@ col = np.array([[10],
 result = arr2d + col
 
 print(result)
+
+b = np.array([100,200,300])
+print(arr2d + b)
+
+c = np.array([[10],[20]])
+print(arr2d + c)
